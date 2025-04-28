@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./base/base";
+@import "./components/Spinner";
+@import "./components/Swal";
+
+.animate {
+  transition: 0.2s ease all;
+}
+
+.animate-easy {
+  transition: 0.3s ease all;
+}
+
+.animate-movement {
+  transition: 0.4s ease all;
+}
+
+.animate-medium {
+  transition: 0.6s ease all;
+}
+
+.animate-very-long {
+  transition: 6s ease all;
+}
+
+.Toastify__progress-bar--success {
+  background-color: #3c85ee !important;
+}
+
+.--toastify-color-transparent .Toastify__toast-icon {
+  background-color: #3c85ee !important;
+}
+
+.Toastify__toast--success .Toastify__icon svg path {
+  fill: #3c85ee !important;
+}
+
+:root {
+  --toastify-icon-color-success: #3c85ee !important;
+}
+
+.disable-force-touch {
+  -webkit-touch-callout: none;
+}
+
+body.dark-mode {
+  background: #23272f;
+  color: #e5e7eb;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode .select-none,
+body.dark-mode .bg-white {
+  background: #2d323b !important;
+  color: #e5e7eb !important;
+}
+
+body.dark-mode,
+body.dark-mode * {
+  color: #e5e7eb !important;
+  border-color: #444a57;
+}
+
+body.dark-mode .text-black,
+body.dark-mode .text-\#212b36,
+body.dark-mode .text-gray-900,
+body.dark-mode .text-gray-800,
+body.dark-mode .text-gray-700 {
+  color: #e5e7eb !important;
+}
