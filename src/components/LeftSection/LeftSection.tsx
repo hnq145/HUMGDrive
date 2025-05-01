@@ -125,7 +125,7 @@ const LeftSection = ({
               className="flex items-center justify-center bg-primary hover:bg-primary-hover no-underline rounded-md px-2 py-2.5"
             >
               <p className="m-0 w-full text-center text-white font-medium text-sm">
-                ADD NEW
+                Thêm Mới
               </p>
               <ChevronSolid className="text-white mr-1" />
             </a>
@@ -146,7 +146,7 @@ const LeftSection = ({
           onClick={goHome}
         >
           <HomeIconOutline className="w-6 h-6" />
-          <p className="ml-3">Home</p>
+          <p className="ml-3">Trang Chủ!</p>
         </div>
 
         <div
@@ -157,7 +157,7 @@ const LeftSection = ({
           onClick={goMedia}
         >
           <PhotoIcon className="w-6 h-6" />
-          <p className="ml-2.5">Media</p>
+          <p className="ml-2.5">Phương Tiện</p>
         </div>
 
         <div
@@ -168,7 +168,7 @@ const LeftSection = ({
           onClick={goSettings}
         >
           <SettingsIcon className="w-6 h-6" />
-          <p className="ml-2.5">Settings</p>
+          <p className="ml-2.5">Cài Đặt</p>
         </div>
 
         <div
@@ -179,7 +179,7 @@ const LeftSection = ({
           onClick={goTrash}
         >
           <TrashIcon className="w-6 h-6" />
-          <p className="ml-2.5">Trash</p>
+          <p className="ml-2.5">Thùng Rác</p>
         </div>
       </div>
     </div>

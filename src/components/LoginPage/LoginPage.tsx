@@ -235,7 +235,7 @@ const LoginPage = () => {
           <div className="absolute -top-10 left-0 right-0 flex justify-center items-center">
             <div className="flex items-center justify-center rounded-full bg-white p-3 shadow-md">
               {!loadingLogin && (
-                <img src="/images/icon.png" alt="logo" className="w-[45px]" />
+                <img src="../../images/Logo-HUMG.jpg" alt="logo" className="w-[45px]" />
               )}
               {loadingLogin && <Spinner />}
             </div>
