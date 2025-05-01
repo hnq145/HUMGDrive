@@ -15,6 +15,7 @@ import { toast, ToastContainer } from "react-toastify";
 import Swal from "sweetalert2";
 import { AxiosError } from "axios";
 import isEmail from "validator/es/lib/isEmail";
+import Logo from "../../images/Logo-HUMG.jpg"
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -235,7 +236,7 @@ const LoginPage = () => {
           <div className="absolute -top-10 left-0 right-0 flex justify-center items-center">
             <div className="flex items-center justify-center rounded-full bg-white p-3 shadow-md">
               {!loadingLogin && (
-                <img src="../../images/Logo-HUMG.jpg" alt="logo" className="w-[45px]" />
+                <img src={Logo} alt="logo" className="w-[45px]" />
               )}
               {loadingLogin && <Spinner />}
             </div>
