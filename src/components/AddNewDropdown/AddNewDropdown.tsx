@@ -137,6 +137,8 @@ const AddNewDropdown: React.FC<AddNewDropdownProps> = ({
             >
               <UploadFileIcon className="w-4 h-4 mr-2.5 text-primary" />
               <p className="text-sm">Upload Files</p>
+              {/* <p className="text-sm">Tải Tập Lên</p> */}
+
             </a>
           </div>
         </li>
@@ -147,6 +149,8 @@ const AddNewDropdown: React.FC<AddNewDropdownProps> = ({
           >
             <CreateFolderIcon className="w-4 h-4 mr-2.5 text-primary" />
             <p className="text-sm">Create Folder</p>
+            {/* <p className="text-sm">Tạo Thư Mục</p> */}
+
           </a>
         </li>
         {supportsWebkitDirectory && (
@@ -157,6 +161,8 @@ const AddNewDropdown: React.FC<AddNewDropdownProps> = ({
             >
               <FolderUploadIcon className="w-4 h-4 mr-2.5 text-primary" />
               <p className="text-sm">Upload Folder</p>
+              {/* <p className="text-sm">Tải Thư Mục</p> */}
+
             </a>
           </li>
         )}

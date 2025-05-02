@@ -133,8 +133,11 @@ const Medias = memo(
               onChange={mediaFilterOnChange}
               value={mediaFilter}
             >
-              <option value="all">Tất Cả</option>
+              {/* <option value="all">Tất Cả</option>
               <option value="photos">Ảnh</option>
+              <option value="videos">Videos</option> */}
+              <option value="all">All</option>
+              <option value="photos">Photo</option>
               <option value="videos">Videos</option>
             </select>
           </div>

@@ -5,6 +5,7 @@ import {
   loginAPI,
   sendPasswordResetAPI,
 } from "../../api/userAPI";
+import { isEmail } from "validator";
 import { useLocation, useNavigate } from "react-router-dom";
 import { setUser } from "../../reducers/user";
 import { useAppDispatch } from "../../hooks/store";
@@ -14,7 +15,6 @@ import Spinner from "../Spinner/Spinner";
 import { toast, ToastContainer } from "react-toastify";
 import Swal from "sweetalert2";
 import { AxiosError } from "axios";
-import isEmail from "validator/es/lib/isEmail";
 import Logo from "../../images/Logo-HUMG.jpg"
 
 const LoginPage = () => {
