@@ -2,6 +2,7 @@
 @use './base/base' as *;
 @use './components/Spinner' as *;
 @use './components/Swal' as *;
+@use './components/HomeLayout' as *;
 
 @tailwind base;
 @tailwind components;
@@ -75,4 +76,9 @@ body.dark-mode .text-gray-900,
 body.dark-mode .text-gray-800,
 body.dark-mode .text-gray-700 {
   color: #e5e7eb !important;
+}
+
+select, 
+option {
+  padding: 3px;
 }
