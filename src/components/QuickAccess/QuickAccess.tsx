@@ -35,7 +35,8 @@ const QuickAccess = memo(() => {
             ? "justify-normal"
             : "justify-center xs:justify-normal",
           {
-            "max-h-40": !quickAccessExpanded,
+            // Create animation for the height of the div when it is expanded or collapsed
+            " max-h-0 overflow-hidden transition-all duration-2000 ease-in-out": !quickAccessExpanded,
             "max-h-[655px] quickAccessOne:max-h-[990px] quickAccessTwo:max-h-[660px] quickAccessThree:max-h-[490px]":
               quickAccessExpanded,
           }
