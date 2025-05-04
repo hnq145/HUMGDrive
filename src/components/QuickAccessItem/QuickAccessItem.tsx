@@ -35,9 +35,8 @@ const QuickAccessItem = memo((props: QuickAccessItemProps) => {
   const multiSelectMode = useAppSelector(
     (state) => state.selected.multiSelectMode
   );
-  const thumbnailURL = `${getBackendURL()}/file-service/thumbnail/${
-    file.metadata.thumbnailID
-  }`;
+  const thumbnailURL = `${getBackendURL()}/file-service/thumbnail/${file.metadata.thumbnailID
+    }`;
   const hasThumbnail = file.metadata.hasThumbnail;
   const [thumbnailLoaded, setThumbnailLoaded] = useState(false);
   const dispatch = useAppDispatch();
@@ -139,6 +138,7 @@ const QuickAccessItem = memo((props: QuickAccessItemProps) => {
           >
             <img
               className="object-cover w-full disable-force-touch"
+              alt="thumbnail"
               src={thumbnailURL}
               onLoad={() => setThumbnailLoaded(true)}
             />
@@ -189,6 +189,7 @@ const QuickAccessItem = memo((props: QuickAccessItemProps) => {
         >
           {formattedFilename}
         </p>
+        {/* Debugging: console.log(formattedFilename) */}
         <div className="flex flex-row items-center mt-2">
           <ClockIcon className="h-4 w-4 mr-1" />
           <p

@@ -3,6 +3,8 @@
 @use './components/Swal' as *;
 @use './components/HomeLayout' as *;
 @use './components/ScrollBar' as *;
+@use './components/LeftSection' as *;
+@use './components/LeftSection' as *;
 
 @tailwind base;
 @tailwind components;
@@ -42,6 +44,7 @@
 
 :root {
   --toastify-icon-color-success: #3c85ee !important;
+  --dark-mode-bg-hover: #929292 !important;
 }
 
 .disable-force-touch {

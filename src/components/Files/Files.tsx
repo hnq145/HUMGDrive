@@ -13,12 +13,20 @@ const Files = memo(() => {
 
   const dispatch = useAppDispatch();
 
-  const changeListViewMode = () => {
-    dispatch(toggleListView());
+  const changeToListView = () => {
+    if (listView) {
+      dispatch(toggleListView());
+    }
+  };
+
+  const changeToGridView = () => {
+    if (!listView) {
+      dispatch(toggleListView());
+    }
   };
 
   return (
-    <div className="mt-8 select-none item-box"> 
+    <div className="mt-8 select-none item-box">
       <div>
         <div className="flex justify-between items-center mb-5">
           <h2 className="m-0 text-xl font-medium">
@@ -26,7 +34,7 @@ const Files = memo(() => {
           </h2>
           <div>
             <ul className="flex items-center list-none m-0 p-0">
-              <li className="mr-4" onClick={changeListViewMode}>
+              <li className="mr-4" onClick={changeToListView}>
                 <a
                   className={classNames({
                     "text-gray-primary": listView,
@@ -51,7 +59,7 @@ const Files = memo(() => {
                   </svg>
                 </a>
               </li>
-              <li className="mr-2" onClick={changeListViewMode}>
+              <li className="mr-2" onClick={changeToGridView}>
                 <a
                   className={classNames({
                     "text-gray-primary": !listView,

@@ -13,8 +13,8 @@ const FileDetailsIcon: React.FC<FileDetailsIconType> = (props) => {
       <g id="Group 9">
         <path
           id="Shape"
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M5.08748 0H37.5691V44.9219H32.4816V50H8.17078L0 41.8442V5.07812H5.08748V0ZM2.00417 42.1875L7.82689 47.9995V42.1875H2.00417ZM31.3076 48.8281H9.00092V41.0156H1.17403V6.25H31.3076V48.8281ZM32.4816 43.75H36.395V1.17188H6.26151V5.07812H32.4816V43.75Z"
           fill="#919EAB"
         />
@@ -40,8 +40,8 @@ const FileDetailsIcon: React.FC<FileDetailsIconType> = (props) => {
         />
         <path
           id="Shape_2"
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M27.9006 17.6797H4.69614V34.5305H27.9006V17.6797ZM26.7207 18.8553V30.9561L19.4447 23.7062L15.5118 27.625L13.152 25.2737L5.87602 32.5235V18.8553H26.7207ZM13.152 26.9364L6.7103 33.3549H26.7207V32.6185L19.4447 25.3689L16.346 28.4564L19.0752 31.1757L18.2409 32.007L13.152 26.9364Z"
           fill="#919EAB"
         />
