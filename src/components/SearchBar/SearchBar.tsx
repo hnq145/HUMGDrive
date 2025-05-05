@@ -7,7 +7,6 @@ import { useClickOutOfBounds, useUtils } from "../../hooks/utils";
 import SearchBarItem from "../SearchBarItem/SearchBarItem";
 import { FolderInterface } from "../../types/folders";
 import { FileInterface } from "../../types/file";
-import classNames from "classnames";
 import { closeDrawer } from "../../reducers/leftSection";
 import { setPopupSelect } from "../../reducers/selected";
 import CloseIcon from "../../icons/CloseIcon";
@@ -114,6 +113,7 @@ const SearchBar = memo(() => {
     <form
       onSubmit={onSearch}
       className="w-full max-w-[700px] relative flex items-center justify-center flex-col"
+      id="custom-bg-searchBar"
       // @ts-expect-error wrapperRef may not match expected ref type for form element
       ref={wrapperRef}
     >
@@ -125,7 +125,9 @@ const SearchBar = memo(() => {
           />
         )}
         {isLoadingSearchSuggestions && <div className="spinner-small"></div>}
-        {searchText.length === 0 && <SearchIcon className="w-4 h-4 ml-3" />}
+        {searchText.length === 0 && (
+          <SearchIcon className="w-4 h-4 ml-3 searchbar-searchicon text-gray-400" />
+        )}
       </div>
       <input
         type="text"
@@ -134,18 +136,12 @@ const SearchBar = memo(() => {
         placeholder={searchTextPlaceholder}
         className="w-full h-8 border border-gray-300 pl-11 pr-4 text-base text-black rounded-md"
         onFocus={onFocus}
-        id="search-bar"
         autoComplete="off"
       />
       <div
-        className={classNames(
-          "absolute left-0 top-8 bg-white shadow-xl rounded-md w-full max-h-[400px] overflow-y-scroll animate-movement",
-          {
-            "border border-gray-secondary":
-              showSuggestions && debouncedSearchText.length,
-          }
-        )}
+        className="absolute left-0 top-8 searchbar-suggestion-bg shadow-xl w-full max-h-[400px] overflow-y-scroll animate-movement"
         style={{
+          borderRadius: "0.375rem",
           height:
             showSuggestions && debouncedSearchText.length
               ? calculatedHeight

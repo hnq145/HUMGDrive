@@ -6,6 +6,14 @@
 @import "./components/Spinner";
 @import "./components/Swal";
 
+body,
+.app-container,
+#custom-bg-searchBar,
+.searchbar-suggestion-bg,
+#custom-leftSection {
+  border-radius: 2.375rem !important;
+}
+
 .animate {
   transition: 0.2s ease all;
 }
@@ -46,6 +54,119 @@
   -webkit-touch-callout: none;
 }
 
+/* Btn Dark mode */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 65px;
+  height: 35px;
+  margin-left: 430px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #3c85ee;
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  left: 2px;
+  bottom: 2px;
+  z-index: 2;
+  background-color: #e8e8e8;
+  transition: 0.4s;
+}
+
+.sun svg {
+  position: absolute;
+  top: 6px;
+  left: 36px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+.moon svg {
+  fill: #3c85ee;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+/* .switch:hover */
+.sun svg {
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* .switch:hover */
+.moon svg {
+  animation: tilt 5s linear infinite;
+}
+
+@keyframes tilt {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-10deg);
+  }
+
+  75% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.input:checked + .slider {
+  background-color: #183153;
+  cursor: pointer;
+}
+
+.input:focus + .slider {
+  box-shadow: 0 0 1px #183153;
+  cursor: pointer;
+}
+
+.input:checked + .slider:before {
+  transform: translateX(30px);
+  cursor: pointer;
+}
+
 body.dark-mode {
   background: #23272f;
   color: #e5e7eb;
@@ -70,4 +191,59 @@ body.dark-mode .text-gray-900,
 body.dark-mode .text-gray-800,
 body.dark-mode .text-gray-700 {
   color: #e5e7eb !important;
+}
+
+// Phần Bg cho phần Component Left Section:
+body.dark-mode #custom-bg-leftSection #custom-bg-searchBar {
+  background-color: #444a57 !important;
+}
+body.dark-mode #custom-bg-leftSection .hover\:bg-white-hover:hover {
+  background-color: #444a57 !important;
+}
+
+body.dark-mode #custom-bg-searchBar {
+  background: #111213 !important;
+}
+
+body.dark-mode #custom-bg-searchBar input {
+  background: #23272f !important;
+  color: #fff !important;
+  border-color: #333 !important;
+}
+
+body.dark-mode #custom-bg-searchBar .bg-white {
+  background: #23272f !important;
+}
+
+body.dark-mode #custom-bg-searchBar .searchbar-searchicon {
+  color: #b0b3b8 !important;
+}
+
+body.dark-mode .left-section-bg {
+  background: #23272f !important;
+  color: #e5e7eb !important;
+  border-color: #23272f !important;
+}
+
+body.dark-mode .left-section-bg .hover\:bg-white-hover:hover,
+body.dark-mode .left-section-bg .bg-white-hover {
+  background: #23272f !important;
+}
+
+body.dark-mode .left-section-bg .text-gray-primary,
+body.dark-mode .left-section-bg .text-black,
+body.dark-mode .left-section-bg .text-gray-900,
+body.dark-mode .left-section-bg .text-gray-800,
+body.dark-mode .left-section-bg .text-gray-700 {
+  color: #e5e7eb !important;
+}
+
+.searchbar-suggestion-bg {
+  background: #fff !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+body.dark-mode .searchbar-suggestion-bg {
+  background: #23272f !important;
+  border: 1px solid #333 !important;
 }

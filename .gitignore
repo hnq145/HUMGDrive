@@ -27,3 +27,6 @@ docker-variables.env
 dist-frontend/
 dist-backend/
 stats.html
+.history/
+src/styles/*.css
+src/styles/*.css.map

@@ -110,21 +110,27 @@ const LeftSection = ({
     <div
       ref={wrapperRef}
       className={classNames(
-        "p-6 fixed desktopMode:relative border-r w-[270px] min-w-[270px] bg-white h-full z-20 desktopMode:z-0 animate-movement mt-1.5",
+        "left-section-bg p-6 fixed desktopMode:relative border-r w-[270px] min-w-[270px] bg-white h-full z-20 desktopMode:z-0 animate-movement mt-1.5",
         {
           "-left-[270px] desktopMode:left-0": !leftSectionOpen,
           "left-0": leftSectionOpen,
         }
       )}
     >
-      <div className="flex flex-col h-full select-none text-sm">
+      <div
+        className="flex flex-col h-full select-none text-sm"
+        id="custom-leftSection"
+      >
         <div>
           <div className="relative mb-7">
             <a
               onClick={openDropdown}
               className="flex items-center justify-center bg-primary hover:bg-primary-hover no-underline rounded-md px-2 py-2.5"
             >
-              <p className="m-0 w-full text-center text-white font-medium text-sm">
+              <p
+                className="m-0 w-full text-center text-white font-medium text-sm cursor-pointer"
+                style={{ borderRadius: "2.375rem" }}
+              >
                 ADD NEW
               </p>
               <ChevronSolid className="text-white mr-1" />
@@ -143,10 +149,13 @@ const LeftSection = ({
               ? "text-primary bg-white-hover"
               : "text-gray-primary"
           )}
+          id="custom-bg-leftSection"
           onClick={goHome}
         >
           <HomeIconOutline className="w-6 h-6" />
-          <p className="ml-3">Home</p>
+          <p className="ml-3" style={{ borderRadius: "2.375rem" }}>
+            Home
+          </p>
         </div>
 
         <div
@@ -157,7 +166,9 @@ const LeftSection = ({
           onClick={goMedia}
         >
           <PhotoIcon className="w-6 h-6" />
-          <p className="ml-2.5">Media</p>
+          <p className="ml-2.5" style={{ borderRadius: "2.375rem" }}>
+            Media
+          </p>
         </div>
 
         <div
@@ -168,7 +179,9 @@ const LeftSection = ({
           onClick={goSettings}
         >
           <SettingsIcon className="w-6 h-6" />
-          <p className="ml-2.5">Settings</p>
+          <p className="ml-2.5" style={{ borderRadius: "2.375rem" }}>
+            Settings
+          </p>
         </div>
 
         <div
@@ -179,7 +192,9 @@ const LeftSection = ({
           onClick={goTrash}
         >
           <TrashIcon className="w-6 h-6" />
-          <p className="ml-2.5">Trash</p>
+          <p className="ml-2.5" style={{ borderRadius: "2.375rem" }}>
+            Trash
+          </p>
         </div>
       </div>
     </div>

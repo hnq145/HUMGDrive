@@ -138,7 +138,7 @@ const LeftSection = ({
 
         <div
           className={classNames(
-            "pl-2 mr-5 py-2 hover:bg-white-hover rounded-md cursor-pointer animate flex flex-row items-center w-full",
+            "custombg pl-2 mr-5 py-2 hover:bg-white-hover rounded-md cursor-pointer animate flex flex-row items-center w-full",
             isHome || isHomeFolder
               ? "text-primary bg-white-hover"
               : "text-gray-primary"
