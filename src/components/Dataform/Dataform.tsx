@@ -94,7 +94,7 @@ const DataForm = memo(
     return (
       <div
         className={classNames(
-          "w-full px-2.5 desktopMode:px-10 py-6 overflow-y-scroll",
+          "w-full px-2.5 desktopMode:px-10 py-6 overflow-y-scroll mt-5",
           {
             "opacity-50": isDraggingFile,
           }

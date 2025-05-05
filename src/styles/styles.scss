@@ -4,15 +4,10 @@
 @use "./components/HomeLayout" as *;
 @use "./components/ScrollBar" as *;
 @use "./components/LeftSection" as *;
-@use "./components/LeftSection" as *;
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import "./base/base";
-@import "./components/Spinner";
-@import "./components/Swal";
 
 .animate {
   transition: 0.2s ease all;
@@ -194,29 +189,28 @@ body.dark-mode .text-gray-700 {
   color: #e5e7eb !important;
 }
 
-// Phần Bg cho phần Component Left Section:
-body.dark-mode #custom-bg-leftSection #custom-bg-searchBar {
+body.dark-mode #custom-bg-leftSection #custom-searchBar {
   background-color: #444a57 !important;
 }
 body.dark-mode #custom-bg-leftSection .hover\:bg-white-hover:hover {
   background-color: #444a57 !important;
 }
 
-body.dark-mode #custom-bg-searchBar {
+body.dark-mode #custom-searchBar {
   background: #111213 !important;
 }
 
-body.dark-mode #custom-bg-searchBar input {
+body.dark-mode #custom-searchBar input {
   background: #23272f !important;
   color: #fff !important;
   border-color: #333 !important;
 }
 
-body.dark-mode #custom-bg-searchBar .bg-white {
+body.dark-mode #custom-searchBar .bg-white {
   background: #23272f !important;
 }
 
-body.dark-mode #custom-bg-searchBar .searchbar-searchicon {
+body.dark-mode #custom-searchBar .searchbar-searchicon {
   color: #b0b3b8 !important;
 }
 
@@ -252,4 +246,25 @@ body.dark-mode .searchbar-suggestion-bg {
 select,
 option {
   padding: 3px;
+}
+
+// Chỉnh sửa custom-bg-searchBar
+#custom-searchBar {
+  margin-left: 65px;
+}
+
+// Chỉnh sửa custom-bg-leftSection
+.bg-primary-selected {
+  background: #3c85ee !important;
+  color: #fff !important;
+}
+body.dark-mode .bg-primary-selected {
+  background: #3c85ee !important;
+  color: #fff !important;
+}
+.bg-red-100 {
+  background: #fee2e2 !important;
+}
+body.dark-mode .bg-red-100 {
+  background: #ef4444 !important;
 }

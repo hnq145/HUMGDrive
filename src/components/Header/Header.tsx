@@ -52,7 +52,17 @@ const Header = () => {
             className="inline-flex items-center justify-center cursor-pointer"
             onClick={() => navigate("/")}
           >
-            <img className="w-8" src={Logo} alt="logo" />
+            <img className="w-8" src={Logo} alt="logo" />{" "}
+            <span
+              className="flex ml-1"
+              style={{
+                fontSize: "13px",
+                marginLeft: "10px",
+                marginRight: "300px",
+              }}
+            >
+              HUMG Drive
+            </span>
           </a>
         </div>
         {!isSettings && (

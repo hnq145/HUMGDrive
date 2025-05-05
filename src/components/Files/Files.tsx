@@ -26,7 +26,7 @@ const Files = memo(() => {
   };
 
   return (
-    <div className="mt-8 select-none item-box">
+    <div className="mt-8 select-none item-box rounded-md">
       <div>
         <div className="flex justify-between items-center mb-5">
           <h2 className="m-0 text-xl font-medium">

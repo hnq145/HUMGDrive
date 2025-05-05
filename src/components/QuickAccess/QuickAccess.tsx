@@ -12,7 +12,7 @@ const QuickAccess = memo(() => {
 
   return (
     <div
-      className="overflow-hidden select-none item-box"
+      className="overflow-hidden select-none item-box rounded-md h-19"
       style={isHome ? { display: "block" } : { display: "none" }}
     >
       <div className="flex flex-row items-center justify-between mb-5">

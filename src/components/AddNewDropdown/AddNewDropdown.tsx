@@ -105,7 +105,7 @@ const AddNewDropdown: React.FC<AddNewDropdownProps> = ({
   return (
     <div
       ref={wrapperRef}
-      className="absolute bottom-0 top-full w-full text-gray-500"
+      className="absolute bottom-0 top-full w-full text-gray-500 mt-5"
       id="add-new-dropdown"
     >
       <input
@@ -132,37 +132,31 @@ const AddNewDropdown: React.FC<AddNewDropdownProps> = ({
         <li>
           <div>
             <a
-              className="flex items-center justify-start px-5 py-3 no-underline overflow-hidden text-sm bg-white hover:bg-white-hover"
+              className="flex items-center justify-start px-5 py-3 no-underline overflow-hidden text-sm bg-white hover:bg-white-hover rounded-lg cursor-pointer"
               onClick={triggerFileUpload}
             >
               <UploadFileIcon className="w-4 h-4 mr-2.5 text-primary" />
               <p className="text-sm">Upload Files</p>
-              {/* <p className="text-sm">Tải Tập Lên</p> */}
-
             </a>
           </div>
         </li>
         <li>
           <a
-            className="flex items-center justify-start px-5 py-3 no-underline overflow-hidden text-sm bg-white hover:bg-white-hover"
+            className="flex items-center justify-start px-5 py-3 no-underline overflow-hidden text-sm bg-white hover:bg-white-hover rounded-lg cursor-pointer"
             onClick={createFolder}
           >
             <CreateFolderIcon className="w-4 h-4 mr-2.5 text-primary" />
             <p className="text-sm">Create Folder</p>
-            {/* <p className="text-sm">Tạo Thư Mục</p> */}
-
           </a>
         </li>
         {supportsWebkitDirectory && (
           <li>
             <a
-              className="flex items-center justify-start px-5 py-3 no-underline overflow-hidden text-sm bg-white hover:bg-white-hover"
+              className="flex items-center justify-start px-5 py-3 no-underline overflow-hidden text-sm bg-white hover:bg-white-hover rounded-lg cursor-pointer"
               onClick={triggerFolderUpload}
             >
               <FolderUploadIcon className="w-4 h-4 mr-2.5 text-primary" />
               <p className="text-sm">Upload Folder</p>
-              {/* <p className="text-sm">Tải Thư Mục</p> */}
-
             </a>
           </li>
         )}

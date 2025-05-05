@@ -110,7 +110,7 @@ const LeftSection = ({
     <div
       ref={wrapperRef}
       className={classNames(
-        "left-section-bg p-6 fixed desktopMode:relative border-r w-[270px] min-w-[270px] bg-white h-full z-20 desktopMode:z-0 animate-movement mt-1.5",
+        "left-section-bg p-6 fixed desktopMode:relative border-r w-[270px] min-w-[270px] bg-white h-full z-20 desktopMode:z-0 animate-movement mt-4",
         {
           "-left-[270px] desktopMode:left-0": !leftSectionOpen,
           "left-0": leftSectionOpen,
@@ -125,7 +125,7 @@ const LeftSection = ({
           <div className="relative mb-7">
             <a
               onClick={openDropdown}
-              className=" flex items-center justify-center bg-primary hover:bg-primary-hover no-underline rounded-md px-2 py-2.5"
+              className="flex items-center hover:dm-hover justify-center bg-primary hover:bg-primary-hover no-underline rounded-full px-2 py-2.5"
             >
               <p
                 className="m-0 w-full text-center text-white font-medium text-sm cursor-pointer"
@@ -133,7 +133,11 @@ const LeftSection = ({
               >
                 ADD NEW
               </p>
-              <ChevronSolid className="text-white mr-1" />
+              <ChevronSolid
+                className={`text-white mr-1 transition-transform duration-200 ${
+                  isDropdownOpen ? "rotate-180" : ""
+                }`}
+              />
             </a>
             <AddNewDropdown
               closeDropdown={closeDropdown}
@@ -144,10 +148,8 @@ const LeftSection = ({
 
         <div
           className={classNames(
-            " dm-hover pl-2 mr-5 py-2 hover:dm-hover rounded-md cursor-pointer animate flex flex-row items-center w-full",
-            isHome || isHomeFolder
-              ? "text-primary dm-hover"
-              : "text-gray-primary "
+            "dm-hover pl-2 mr-5 py-2 hover:dm-hover hover:bg-white-hover rounded-full cursor-pointer animate flex flex-row items-center w-full",
+            (isHome || isHomeFolder) && "bg-primary-selected text-white"
           )}
           id="custom-bg-leftSection"
           onClick={goHome}
@@ -158,8 +160,8 @@ const LeftSection = ({
 
         <div
           className={classNames(
-            " dm-hover pl-2 mr-5 py-2 hover:dm-hover rounded-md cursor-pointer animate flex flex-row items-center mt-1 w-full",
-            isMedia ? "text-primary dm-hover" : "text-gray-primary"
+            "dm-hover pl-2 mr-5 py-2 hover:dm-hover hover:bg-white-hover rounded-full cursor-pointer animate flex flex-row items-center mt-5 w-full",
+            isMedia && "bg-primary-selected text-white"
           )}
           onClick={goMedia}
         >
@@ -169,8 +171,8 @@ const LeftSection = ({
 
         <div
           className={classNames(
-            " dm-hover pl-2 mr-5 py-2 hover:dm-hover rounded-md cursor-pointer animate flex flex-row items-center desktopMode:hidden mt-1 w-full",
-            isSettings ? "text-primary dm-hover" : "text-gray-primary"
+            "dm-hover pl-2 mr-5 py-2 hover:dm-hover hover:bg-white-hover rounded-md cursor-pointer animate flex flex-row items-center desktopMode:hidden mt-1 w-full",
+            isSettings ? "bg-primary-selected text-white" : "text-gray-primary"
           )}
           onClick={goSettings}
         >
@@ -180,8 +182,8 @@ const LeftSection = ({
 
         <div
           className={classNames(
-            " dm-hover pl-2 mr-5 py-2 hover:dm-hover rounded-md cursor-pointer animate flex flex-row items-center mt-1 w-full",
-            isTrash ? "text-red-500 dm-hover" : "text-gray-primary"
+            "dm-hover pl-2 mr-5 py-2 hover:dm-hover hover:bg-white-hover rounded-full cursor-pointer animate flex flex-row items-center mt-5 w-full",
+            isTrash && "bg-red-100 text-red-500"
           )}
           onClick={goTrash}
         >

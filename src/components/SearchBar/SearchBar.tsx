@@ -112,7 +112,7 @@ const SearchBar = memo(() => {
   return (
     <form
       onSubmit={onSearch}
-      className="w-full max-w-[700px] relative flex items-center justify-center flex-col"
+      className="w-full max-w-[700px] relative flex items-center justify-center flex-col rounded-full"
       id="custom-bg-searchBar"
       // @ts-expect-error wrapperRef may not match expected ref type for form element
       ref={wrapperRef}
