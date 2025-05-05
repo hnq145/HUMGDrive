@@ -79,7 +79,7 @@ const Folders = memo(
     })();
 
     return (
-      <div className="mt-8 select-none">
+      <div className="mt-8 select-none item-box">
         {!isHome && (
           <React.Fragment>
             <div className="block mb-6">

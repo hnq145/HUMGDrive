@@ -63,61 +63,94 @@ export const useClickOutOfBounds = (
   };
 };
 
+// export const useDragAndDrop = (
+//   fileDroppedCallback: (files: FileList) => void
+// ) => {
+//   const [isDraggingFile, setIsDraggingFile] = useState(false);
+//   const isDraggingFileRef = useRef(false);
+
+//   const onDragDropEvent = useCallback(
+//     (e: DragEvent) => {
+//       e.preventDefault();
+//       e.stopPropagation();
+//       isDraggingFileRef.current = false;
+//       setIsDraggingFile(false);
+
+//       if (e.dataTransfer) {
+//         fileDroppedCallback(e.dataTransfer.files);
+//       }
+//     },
+//     [fileDroppedCallback]
+//   );
+//   const onDragEvent = useCallback((e: DragEvent) => {
+//     e.preventDefault();
+//     e.stopPropagation();
+//   }, []);
+//   const onDragEnterEvent = useCallback((e: DragEvent) => {
+//     e.preventDefault();
+//     e.stopPropagation();
+
+//     if (isDraggingFileRef.current) return;
+//     isDraggingFileRef.current = true;
+//     setIsDraggingFile(true);
+//   }, []);
+//   const stopDrag = useCallback((e: DragEvent) => {
+//     e.preventDefault();
+//     e.stopPropagation();
+
+//     if (!isDraggingFileRef.current) return;
+//     isDraggingFileRef.current = false;
+//     setIsDraggingFile(false);
+//   }, []);
+
+//   // Handler for focus event to stop dragging
+//   const onFocus = useCallback(() => {
+//     isDraggingFileRef.current = false;
+//     setIsDraggingFile(false);
+//   }, []);
+
+//   useEffect(() => {
+//     window.addEventListener("dragover", stopDrag);
+//     window.addEventListener("focus", onFocus);
+
+//     return () => {
+//       window.removeEventListener("dragover", stopDrag);
+//       window.removeEventListener("focus", onFocus);
+//     };
+//   }, [stopDrag, onFocus]);
+
+//   return {
+//     isDraggingFile,
+//     onDragDropEvent,
+//     onDragEvent,
+//     onDragEnterEvent,
+//     stopDrag,
+//   };
+// };
 export const useDragAndDrop = (
-  fileDroppedCallback: (files: FileList) => void
+  onDropCallback: (files: FileList) => void
 ) => {
   const [isDraggingFile, setIsDraggingFile] = useState(false);
-  const isDraggingFileRef = useRef(false);
 
-  const onDragDropEvent = useCallback(
-    (e: DragEvent) => {
-      e.preventDefault();
-      e.stopPropagation();
-      isDraggingFileRef.current = false;
-      setIsDraggingFile(false);
+  const onDragDropEvent = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    setIsDraggingFile(false);
+    if (event.dataTransfer.files) {
+      onDropCallback(event.dataTransfer.files);
+    }
+  };
 
-      if (e.dataTransfer) {
-        fileDroppedCallback(e.dataTransfer.files);
-      }
-    },
-    [fileDroppedCallback]
-  );
-  const onDragEvent = useCallback((e: DragEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-  }, []);
-  const onDragEnterEvent = useCallback((e: DragEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
+  const onDragEvent = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+  };
 
-    if (isDraggingFileRef.current) return;
-    isDraggingFileRef.current = true;
+  const onDragEnterEvent = () => {
     setIsDraggingFile(true);
-  }, []);
-  const stopDrag = useCallback((e: DragEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
+  };
 
-    if (!isDraggingFileRef.current) return;
-    isDraggingFileRef.current = false;
+  const stopDrag = () => {
     setIsDraggingFile(false);
-  }, []);
-
-  // Handler for focus event to stop dragging
-  const onFocus = useCallback(() => {
-    isDraggingFileRef.current = false;
-    setIsDraggingFile(false);
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("dragover", stopDrag);
-    window.addEventListener("focus", onFocus);
-
-    return () => {
-      window.removeEventListener("dragover", stopDrag);
-      window.removeEventListener("focus", onFocus);
-    };
-  }, [stopDrag, onFocus]);
+  };
 
   return {
     isDraggingFile,

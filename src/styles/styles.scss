@@ -1,3 +1,11 @@
+@use "./base/base" as *;
+@use "./components/Spinner" as *;
+@use "./components/Swal" as *;
+@use "./components/HomeLayout" as *;
+@use "./components/ScrollBar" as *;
+@use "./components/LeftSection" as *;
+@use "./components/LeftSection" as *;
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,14 +13,6 @@
 @import "./base/base";
 @import "./components/Spinner";
 @import "./components/Swal";
-
-body,
-.app-container,
-#custom-bg-searchBar,
-.searchbar-suggestion-bg,
-#custom-leftSection {
-  border-radius: 2.375rem !important;
-}
 
 .animate {
   transition: 0.2s ease all;
@@ -48,6 +48,7 @@ body,
 
 :root {
   --toastify-icon-color-success: #3c85ee !important;
+  --dark-mode-bg-hover: #929292 !important;
 }
 
 .disable-force-touch {
@@ -246,4 +247,9 @@ body.dark-mode .left-section-bg .text-gray-700 {
 body.dark-mode .searchbar-suggestion-bg {
   background: #23272f !important;
   border: 1px solid #333 !important;
+}
+
+select,
+option {
+  padding: 3px;
 }
